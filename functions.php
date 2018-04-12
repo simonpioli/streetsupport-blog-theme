@@ -90,6 +90,7 @@ add_action( 'rest_api_init', function() {
 	add_filter( 'rest_pre_serve_request', function( $value ) {
 		header( 'Access-Control-Allow-Origin: *' );
 		header( 'Access-Control-Allow-Methods: HEAD, GET' );
+		header("Access-Control-Expose-Headers: Link");
 		header( 'Access-Control-Allow-Credentials: true' );
 
 		return $value;
